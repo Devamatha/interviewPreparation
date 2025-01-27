@@ -1,0 +1,211 @@
+
+Linux By Mr. Ashok | Session - 02 | Linux Basic Commands
+
+
+
+-> os act as a mediator between users and computer hardware component.
+->os provides user interface to work with computer.
+->os is mandotry to use any computer.
+Ex: Windows, Linux, MAC, Android & IOS etc....
+
+-> Windows is single user based OS
+-> Windows is paid software
+-> Windows developed by Microsoft
+-> Security features are less in windows OS
+-> Recommended for personal use
+
+
+-> Linux is free & Open source OS
+-> Linux is multi user based OS
+-> Security is high in Linux
+-> It is recommended for Severs, Databases, Applications execution
+-> Linux is community based OS
+-> Linux OS developed by 'Linux Torvalds'
+
+Linux Distributions /Flavors
+->Red Hat
+->Amazon Linux
+-> ubuntu
+->cent Os
+->SUSE
+->Kali Linux
+->Debian Linux
+->Fedora ..etc
+Note:200+Linux Distributions are avalible
+
+
+*******************************
+Linux Envirolnement SetUp
+****************************
+->we can install using Virtual Box(HyperVisior/VM Ware)
+->we can use cloud provided Virtual Machine (Aws Ec2)
+
+
+************
+Linux commands
+*************
+Linux vm we will use with the commands
+->in Linux everything will be represented as a file 
+->NormalFiles(text files)
+->Directories(Folder)
+
+/////////Create Directories//////////////////
+
+->mkdir directory (To create a folder)
+->rmdir directory (To delete folder)
+->pwd (Present working directory )
+-> cd directories(to change directories)
+->directory cd .. to go back 
+-> to delete a empty directory(rmdir filename.txt)
+->To delete a content directories(rm -r directory name)
+->To move the files from one directory to another directory(mv directory another directoruie)
+
+
+
+////////create a Text file///////////////
+->to create a empty file (touch filename.text)
+->To create content file(cat > filename.txt).To save CTRL+D
+->To read txt file(cat filename)
+->To update the text (cat >> filename.txt)
+->To delete the text file(rm filename.txt)
+->To rename a text file(mv presentfile changedfilename)
+-> to copy the one file content to another file(cat filename > second filename)
+->To copy the multiple files data(cat filename.txt secondfile.txt >thirdfile.txt)
+
+
+////////To read the files in different ways///////////////
+->To read the text file in reverse order(tac filename.txt)
+->To read the from top  10 lines of the file(head filename.txt)
+...To read first top 30 lines (head -n 30 filename.txt)
+->To read the from bottom  10 lines of the file(tail filename.txt)
+...To read bottom  30 lines (tail -n 30 filename.txt)
+...to read form 30 th line(tail +30 filename.txt).
+->To print the no of characters and words in the file(wc filename.txt)
+
+
+
+////////////////GREP///////////
+->GREP stands for global Regular Expression print
+->GREP command for command will process the text line by line it prints the lines which are matched with given pattern
+->grep 'searched text ' filename.txt(case sensitive)
+->grep -i 'searched text' filename.txt(not case sensitive)
+-> grep -i 'searched Text' *(it will search the text in all the files)
+->grep -R 'searched Text' (it will search the pwd and sub directives also)
+
+
+
+////Text editor //////////////////
+-> In Windows OS Notepad is the default text editor (It in default in Windows)
+-> In Linux OS we will use 'VI' text editor (It is default in Linux)
+$ vi ashokit.txt
+-> press 'i' in keyboard to enter into "insert mode'
+-> write the data in the file
+-> Press 'Esc' then press :wq to save and close that file
+I
+Note: To close the file without saving we will use ==> :q!
+
+
+///////////////SED Command/////////////////
+->SED stands for stream editor
+->using SED command use to replace the text without opening the file
+->it will replace the Linux word with Unix and print output in the terminal .but it will not save the file
+->sed 's/Linux/unix/' filename.txt.
+
+->it will replace the Linux word wit unix and it will  save the file.
+->sed -i 's/Linax/Uinax/' filename.
+->delete the last line of the file (sed -i '$d' filename.txt)
+->to delete the text from nth line in the text file(sed -i '12,$d' filename.txt)
+
+
+
+
+///////////////////File Permission In Linax///////////////
+->A file can have  3 Permission
+1.Read
+2.Write
+3.execute
+->File Permissions are devided into 3 sessions
+section-1:User Permission(first 3  characters represents user permissions)
+ section-2:Group Permission(from 4 th to 6 th   characters represents group  permissions)
+section-3:other Permission(from 7th  to 9 th   characters represents others permissions)
+
+
+/////Modify file Permission ///////
+
+/////user////////////////
+->using 'chmod' command we can change the file permission.
+->using 'chmod' command we can add and remove permission.
+->add execute permission for the user (chmod u+x filename.txt)
+->remove execute permission for the user(chmod u-x filename.txt)
+
+
+/////////////group///////////////
+->add execute permission for the group (chmod g+x filename.txt)
+->remove execute permission for the user(chmod g-x filename.txt)
+->remove write and execute permission from the group (chmod g-wx filename.txt)
+
+//////////////other/////////////
+
+->add execute permission for the other (chmod o+x filename.txt)
+->remove execute permission for the other(chmod o-x filename.txt)
+
+
+->0 no permission
+->1 only execute
+->2 only write
+->3 Execute and write
+->4 only read
+->5 Read & Execute
+->6 Read & write
+->7 Read & Write & Execute
+
+chmod 777 players.txt
+
+user Read & Write & Execute
+
+group Read & Write & Execute
+
+other Read & Write & Execute
+
+####################working with  user accounts in Linux ############
+-> Linux multi user operating system
+->with in one Linux machine we can create a multiple user accounts
+->Multiple users can access one Linux at a time and they can perform Multi-tasking
+
+->Every Linux machine have root account (super user)
+->when we launch  a Linux vm using "amazon Linux AMI "we will get ec2-user as a default user
+->to go to root user(sudo su)
+->to go back to user(exit)
+-> to perform admin activities we will use 'sudo' permission
+
+
+//////////////////Create a user in Linux/////////////////
+create a user 
+(sudo useradd <username>).
+->Verify your account details
+(id username).
+
+How to display the users list
+->cat /etc/passwd
+
+delete the user
+sudo userdel username
+
+/////group creation///////////
+->create  a group
+ (sudo groupadd groupname).
+->add user to group
+ (sudo usermod -aG groupname username)
+->Remove user from the group 
+sudo gpasswd -d username groupname
+->Delete the group 
+sudo groupdel groupname
+How to display the groups list
+->cat /etc/group
+->print the users belongs to particular group 
+sudo lid -g groupname
+
+
+
+
+
