@@ -1,0 +1,431 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red155\green0\blue211;\red0\green0\blue0;\red255\green0\blue0;\red51\green51\blue51;\red0\green176\blue80;\red192\green80\blue77;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\li2880\sa200\sl276\slmult1\cf1\b\f0\fs28\lang9 SQL PREPARATION NOTES\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf2\b0\fs24 SQL: SQL standandrs for stuctured query languague.and also standered language for storing and manupulating the data in the database.\par
+{\pntext\f1\'B7\tab}sql become the standered of the americal national standerd institue in 1986,and of the international organization for standardization (iso) in 1987.\par
+
+\pard\sa200\sl276\slmult1\cf3 1.What SQL can do ?.\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf2\b0 to store the data in the table.\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 to update the data in the table .\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 sql can excute the quries against the database.\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 can delete the data in the database .\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 can retrive the data in the database \cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 can create the tables in the database \cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 can fetch the specific data from the database.\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 SQL can set permissions on tables, procedures, and views.\cf1\b\par
+{\pntext\f1\'B7\tab}\cf2\b0 SQL can create stored procedures in a database.\cf1\b\par
+
+\pard\sa200\sl276\slmult1\cf3\b0\fs28 2.RDBMS ?\cf2\par
+\fs24 RDBMS stands for Relational Database Management System.RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.The data in RDBMS is stored in database objects called tables. A table is a collection of related data entries and it consists of columns and rows.\par
+\cf3\fs28 3.Feilds and Columns both are same ?.\par
+\cf2\fs24 yes.Every table is broken up into smaller entities called fields. The fields in the Customers table consist of CustomerID, CustomerName, ContactName, Address, City, PostalCode and Country. A field is a column in a table that is designed to maintain specific information about every record in the table.\par
+A column is a vertical entity in a table that contains all information associated with a specific field in a table. \par
+\cf3\fs28 4.record and row both are same ?.\par
+\cf2\fs24 A record, also called a row, is each individual entry that exists in a table. \cf3\fs28\par
+\b 5.Some of The Most Important SQL Commands\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf4\fs24 SELECT \b0 - extracts data from a database\par
+{\pntext\f1\'B7\tab}\b UPDATE \b0 - updates data in a database\par
+{\pntext\f1\'B7\tab}\b DELETE \b0 - deletes data from a database\par
+{\pntext\f1\'B7\tab}\b INSERT INTO \b0 - inserts new data into a database\par
+{\pntext\f1\'B7\tab}\b CREATE DATABASE \b0 - creates a new database\par
+{\pntext\f1\'B7\tab}\b ALTER DATABASE \b0 - modifies a database\par
+{\pntext\f1\'B7\tab}\b CREATE TABLE \b0 - creates a new table\par
+{\pntext\f1\'B7\tab}\b ALTER TABLE \b0 - modifies a table\par
+{\pntext\f1\'B7\tab}\b DROP TABLE \b0 - deletes a table\par
+{\pntext\f1\'B7\tab}\b CREATE INDEX \b0 - creates an index (search key)\par
+{\pntext\f1\'B7\tab}\b DROP INDEX \b0 - deletes an index\par
+
+\pard\sa200\sl276\slmult1\cf3\b\fs28 6.The SQL SELECT Statement\par
+\cf4\b0\fs24 The SELECT statement is used to select data from a database.\par
+To select the two coloumns from the specific table .\par
+\cf5 Ex:  SELECT column1, column2 FROM table_name;\par
+\cf4 To select the entire table\par
+\cf5 Ex:select * from table_name;\cf2\par
+\cf3\b\fs28 7.SQL SELECT DISTINCT Statement\par
+\cf2\b0\fs24 The SELECT DISTINCT statement is used to return only distinct (different) valu.\par
+Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.\par
+\cf5 Ex: SELECT DISTINCT column1, column2, FROM table_name;\par
+\cf3\fs28 8.Count Distinct ?.\par
+\cf2\fs24 By using the DISTINCT keyword in a function called COUNT, we can return the number of different countries.\par
+\cf5 Ex: select count(*) from (select distinct employee_name,employeeId  from u805212975_adminuttishtha.Site_users)  as distinct_names;\par
+\cf3 9.SQL WHERE Clause ?.\par
+\cf2 The WHERE clause is used to filter records.It is used to extract only those records that fulfill a specified condition.\par
+\cf5 Ex: SELECT column1, column2 FROM table_name WHERE condition;\par
+The following operators can be used in the WHERE clause:\par
+\cf6 operator           Description               \par
+\cf2 =                      equal \par
+\cf7  Ex: select * from  u805212975_adminuttishtha.EmployeeSalaries  where id=1;\par
+\cf2 <                       lessthan\par
+\cf7 Ex: select * from  u805212975_adminuttishtha.EmployeeSalaries  where id<2;\par
+\cf2 >                       greaterthan\par
+\cf7 Ex: select * from  u805212975_adminuttishtha.EmployeeSalaries  where id>2;\par
+\cf2\par
+>=                     greaterthaorequlto\par
+\cf7 Ex: select * from  u805212975_adminuttishtha.EmployeeSalaries  where id>=2;\par
+\cf2\par
+<=                     lessthanoreqalto\par
+\cf7 Ex: select * from  u805212975_adminuttishtha.EmployeeSalaries  where id<=2;\par
+\cf2\par
+between         Between a certain range\par
+\cf7 select * from  adminuttishtha.EmployeeSalaries where price   between 1 and 20;\par
+\cf2 like               Search for a pattern\par
+\cf7 select * from  adminuttishtha.EmployeeSalaries where country   like  "%s";\par
+\cf2\par
+in                  To specify multiple possible values for a column\tab\par
+\cf7 Ex: SELECT * FROM Customers WHERE City IN ('Paris','London');\par
+\cf3\par
+\b\fs28 10.SQL ORDER BY Keyword ?.\par
+\cf4\b0\fs24 The ORDER BY keyword is used to sort the result-set in ascending or descending order.\par
+\cf7 EX:SELECT * FROM Products ORDER BY Price ASC ;\par
+\cf6 Using Both ASC and DESC\par
+\cf4 The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:\par
+\cf7 SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;\par
+\par
+\cf3\b\fs28 11.SQL AND Operator\par
+\cf4\b0\fs24 The WHERE clause can contain one or many AND operators.\par
+The AND operator is used to filter records based on more than one condition, like if you want to return all customers from Spain that starts with the letter 'G':\cf7\par
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%';\par
+\b\fs28\par
+\cf3 12.AND vs OR\par
+\cf4\b0\fs24 The AND operator displays a record if all the conditions are TRUE.\par
+The OR operator displays a record if any of the conditions are TRUE.\par
+All Conditions Must Be True\par
+The following SQL statement selects all fields from Customers where Country is "Germany" AND City is "Berlin" AND PostalCode is higher than 12000:\par
+\cf7 SELECT * FROM Customers WHERE Country = 'Germany' AND City = 'Berlin' AND PostalCode > 12000;\par
+\cf3\b 13.SQL OR Operator\par
+\cf4\b0 The WHERE clause can contain one or more OR operators.\par
+The OR operator is used to filter records based on more than one condition, like if you want to return all customers from Germany but also those from Spain:\par
+\cf7 SELECT * FROM Customers WHERE Country = 'Germany' OR Country = 'Spain';\par
+\cf3\b 14.Combining AND and OR\par
+\cf4\b0 The following SQL statement selects all customers from Spain that starts with a "G" or an "R".Make sure you use parenthesis to get the correct result.\par
+\cf7 SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');\par
+\cf3\b 15.SQL NOT Operator.\par
+\cf4\b0 The NOT operator is used in combination with other operators to give the opposite result, also called the negative result.\par
+In the select statement below we want to return all customers that are NOT from Spain:\par
+\cf7 SELECT * FROM Customers WHERE NOT Country = 'Spain';\par
+\cf3\b 16.The SQL INSERT INTO Statement?.\par
+\cf4\b0 1. Specify both the column names and the values to be inserted:\par
+\cf7 INSERT INTO table_name (column1, column2, column3, ...)\par
+VALUES (value1, value2, value3, ...);\par
+\cf4 2. If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query. However, make sure the order of the values is in the same order as the columns in the table. Here, the INSERT INTO syntax would be as follows\par
+\cf7 INSERT INTO table_name  VALUES (value1, value2, value3, ...);\par
+\cf3\b SQL NULL Values \cf7\b0\par
+\cf3\b 17.What is a NULL Value?.\par
+\cf7\b0 A field with a NULL value is a field with no value.\par
+If a field in a table is optional, it is possible to insert a new record or update a record without adding a value to this field. Then, the field will be saved with a NULL value.\par
+Note: A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!\par
+\par
+\cf3\b 18.How to Test for NULL Values?.\par
+\cf7\b0 It is not possible to test for NULL values with comparison operators, such as =, <, or <>.\par
+We will have to use the IS NULL and IS NOT NULL operators instead.\par
+\cf3\b 19.IS NULL Syntax.\par
+\cf7\b0 SELECT column_names FROM table_name WHERE column_name IS NULL;\par
+\cf3\b 20.IS NOT NULL Syntax.\cf7\b0\par
+SELECT column_names FROM table_name WHERE column_name IS NOT NULL;\par
+\par
+\cf3\b\fs28 21.The SQL UPDATE Statement.\par
+\cf4\b0\fs24 The UPDATE statement is used to modify the existing records in a table.\par
+\cf7 UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;\par
+\cf3\b\fs28 22.SQL DELETE Statement.\par
+\cf4\b0\fs24 The DELETE statement is used to delete existing records in a table.\par
+\cf7 DELETE FROM table_name WHERE condition;\par
+\cf3\b\fs28 SQL TOP, LIMIT, FETCH FIRST or ROWNUM Clause\par
+\fs24 23.The SQL SELECT TOP Clause\cf4\par
+\b0 The SELECT TOP clause is used to specify the number of records to return.\par
+The SELECT TOP clause is useful on large tables with thousands of records. Returning a large number of records can impact performance.\par
+\cf7 SELECT TOP 3 * FROM Customers;\par
+\cf3\b\fs28 24.FETCH FIRST\par
+\cf4\b0\fs24 The following SQL statement shows the equivalent example for Oracle:\par
+\cf7 SELECT * FROM Customers FETCH FIRST 3 ROWS ONLY;\par
+\cf3\b\fs28 25.SQL TOP PERCENT Example\par
+\cf4\b0\fs24 The following SQL statement selects the first 50% of the records from the "Customers" table (for SQL Server/MS Access):\par
+\cf7 SELECT TOP 50 PERCENT * FROM Customers;\par
+\cf3\b\fs28 26.SQL Aggregate Functions\par
+\cf4\b0\fs24 An aggregate function is a function that performs a calculation on a set of values, and returns a single value.\par
+Aggregate functions are often used with the GROUP BY clause of the SELECT statement. The GROUP BY clause splits the result-set into groups of values and the aggregate function can be used to return a single value for each group.\par
+The most commonly used SQL aggregate functions are:\par
+MIN() - returns the smallest value within the selected column.\par
+MAX() - returns the largest value within the selected column.\par
+COUNT() - returns the number of rows in a set.\par
+SUM() - returns the total sum of a numerical column.\par
+AVG() - returns the average value of a numerical column.\par
+Aggregate functions ignore null values (except for COUNT()).\par
+We will go through the aggregate functions above in the next chapters.\par
+\cf3\fs28 27.The SQL MIN() and MAX() Functions\par
+\cf4\fs24 The MIN() function returns the smallest value of the selected column.\par
+The MAX() function returns the largest value of the selected column.\par
+\cf7 SELECT MIN(Price) FROM Products;\par
+SELECT MAX(Price) FROM Products;\par
+\cf3\b 28.The SQL COUNT() Function\par
+\cf4\b0 The COUNT() function returns the number of rows that matches a specified criterion.\par
+\cf7 SELECT COUNT(*) FROM Products;\par
+\cf3\b\fs28 29.The SQL SUM() Function\par
+\cf4\b0\fs24 The SUM() function returns the total sum of a numeric column.\par
+\cf7 SELECT SUM(Quantity) FROM OrderDetails;\par
+\cf3\b\fs28 30.The SQL AVG() Function\par
+\cf4\b0\fs24 The AVG() function returns the average value of a numeric column.\par
+\cf7 SELECT AVG(Price) FROM Products;\par
+\cf3\b\fs28 31.The SQL LIKE Operator\par
+\cf4\b0\fs24 The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.\par
+There are two wildcards often used in conjunction with the LIKE operator:\par
+ The percent sign % represents zero, one, or multiple characters\par
+ The underscore sign _ represents one, single character\par
+\cf7 SELECT * FROM Customers WHERE CustomerName LIKE 'a%';\par
+\cf3\b\fs28 SQL Wildcard Characters\par
+\cf4\b0\fs24 A wildcard character is used to substitute one or more characters in a string.\par
+Wildcard characters are used with the LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.\par
+Return all customers that starts with the letter 'a':\par
+\cf7 SELECT * FROM Customers WHERE CustomerName LIKE 'a%';\par
+\cf3\b\fs28 Symbol                                         Description\cf7\b0\fs24\par
+\cf4 %                                                        Represents zero or more characters\par
+-                                                         Represents a single character\par
+[]                                                         Represents any single character within the brackets *\par
+^                                                       Represents any character not in the brackets *\par
+-                                                       Represents any single character within the specified range *\par
+\{\}                                                    Represents any escaped character **\par
+\par
+\cf3\b\fs28 Using the _ Wildcard\par
+\cf4\b0\fs24 The _ wildcard represents a single character.\par
+It can be any character or number, but each _ represents one, and only one, character.\par
+\cf7 SELECT * FROM Customers WHERE City LIKE '_ondon';\par
+\cf3\b\fs28 Using the [] Wildcard\par
+\cf4\b0\fs24 The [] wildcard returns a result if any of the characters inside gets a match.\par
+Return all customers starting with either "b", "s", or "p":\par
+\cf7 SELECT * FROM Customers WHERE CustomerName LIKE '[bsp]%';\par
+\cf3\b\fs28 Using the - Wildcard\par
+\cf4\b0\fs24 The - wildcard allows you to specify a range of characters inside the [] wildcard.\par
+\cf7 SELECT * FROM Customers WHERE CustomerName LIKE '[a-f]%';\par
+\cf3\b\fs28 The SQL IN Operator\par
+\cf4\b0\fs24 The IN operator allows you to specify multiple values in a WHERE clause.\par
+The IN operator is a shorthand for multiple OR conditions.\par
+Return all customers from 'Germany', 'France', or 'UK'\par
+\cf7 SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');\par
+\cf3\b\fs28 The SQL BETWEEN Operator\par
+\cf4\b0\fs24 The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.we can use between operater with NOT BETWEEN ,BETWEEN with IN ,ORDER BY\par
+The BETWEEN operator is inclusive: begin and end values are included. \par
+\cf7 SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;\par
+\cf3\b\fs28 SQL Aliases\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf4\b0\fs24 SQL aliases are used to give a table, or a column in a table, a temporary name.\par
+{\pntext\f1\'B7\tab}Aliases are often used to make column names more readable.\par
+{\pntext\f1\'B7\tab}An alias only exists for the duration of that query.\par
+{\pntext\f1\'B7\tab}An alias is created with the AS keyword.\par
+
+\pard\sa200\sl276\slmult1\cf7 SELECT CustomerID AS ID FROM Customers;\par
+\cf3\b\fs28 Using Aliases With a Space Character\par
+\cf4\b0\fs24 Using [square brackets] for aliases with space characters:\par
+\cf7 SELECT ProductName AS [My Great Products] FROM Products;\par
+\cf4 Ex:2\cf7\par
+SELECT o.OrderID, o.OrderDate, c.CustomerName FROM Customers AS c, Orders AS o\par
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;\par
+\cf3\b\fs28 The SQL CREATE DATABASE Statement\par
+\cf4\b0\fs24 The CREATE DATABASE statement is used to create a new SQL database.\par
+\cf7 CREATE DATABASE databasename;\par
+\cf3\b\fs28 SQL DROP DATABASE Statement\par
+\cf4\b0\fs24 The DROP DATABASE statement is used to drop an existing SQL database.\par
+\cf7 DROP DATABASE databasename;\par
+\cf3\b\fs28 The SQL BACKUP DATABASE Statement\par
+\cf4\b0\fs24 The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.\par
+\cf7 BACKUP DATABASE databasename TO DISK = 'filepath';\cf4\par
+A differential back up only backs up the parts of the database that have changed since the last full database backup.\par
+\cf7 BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;\par
+\cf3\b\fs28 The SQL CREATE TABLE Statement\par
+\cf4\b0\fs24 The CREATE TABLE statement is used to create a new table in a database.\par
+\cf7 CREATE TABLE table_name (\par
+    column1 datatype,\par
+    column2 datatype,\par
+    column3 datatype,\par
+   ....\par
+);\par
+\cf3\b\fs28 Create Table Using Another Table\par
+\cf4\b0\fs24 A copy of an existing table can also be created using CREATE TABLE.The new table gets the same column definitions. All columns or specific columns can be selected.If you create a new table using an existing table, the new table will be filled with the existing values from the old table.\par
+\cf7 CREATE TABLE TestTable AS SELECT customername, contactname FROM customers;\par
+\cf3\b\fs28 The SQL DROP TABLE Statement\par
+\cf4\b0\fs24 The DROP TABLE statement is used to drop an existing table in a database.\par
+\cf7 DROP TABLE table_name;\par
+\cf3\b\fs28 SQL TRUNCATE TABLE\par
+\cf4\b0\fs24 The TRUNCATE TABLE statement is used to delete the data inside a table, but not the table itself.\cf7\par
+TRUNCATE TABLE table_name;\par
+\cf3\b\fs28 SQL ALTER TABLE Statement\par
+\cf4\b0\fs24 The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.The ALTER TABLE statement is also used to add and drop various constraints on an existing table.\par
+\cf7 ALTER TABLE table_name ADD column_name datatype;\par
+\cf3\b\fs28 ALTER TABLE - DROP COLUMN\par
+\cf4\b0\fs24 To delete a column in a table, use the following syntax (notice that some database systems don't allow deleting a column):\cf7\par
+ALTER TABLE table_name DROP COLUMN column_name;\par
+\cf3\b\fs28 SQL Constraints\par
+\cf4\b0\fs24 SQL constraints are used to specify rules for data in a table.\par
+Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement.\par
+\cf7 CREATE TABLE table_name (\par
+    column1 datatype constraint,\par
+    column2 datatype constraint,\par
+    column3 datatype constraint,\par
+    ....\par
+);\par
+\cf3\b\fs28 SQL Constraints\par
+\cf4\b0\fs24 SQL constraints are used to specify rules for the data in a table.\par
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.\par
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.\par
+The following constraints are commonly used in SQL:\par
+\cf7 NOT NULL - Ensures that a column cannot have a NULL value\par
+UNIQUE - Ensures that all values in a column are different\par
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table\par
+FOREIGN KEY - Prevents actions that would destroy links between tables\par
+CHECK - Ensures that the values in a column satisfies a specific condition\par
+DEFAULT - Sets a default value for a column if no value is specified\par
+CREATE INDEX - Used to create and retrieve data from the database very quickly\par
+\cf3\b\fs28 SQL NOT NULL Constraint\par
+\cf4\b0\fs24 By default, a column can hold NULL values.\par
+The NOT NULL constraint enforces a column to NOT accept NULL values.\par
+\cf7 CREATE TABLE Persons (\par
+    ID int NOT NULL,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255) NOT NULL,\par
+    Age int\par
+);\par
+\cf3\b\fs28 SQL UNIQUE Constraint\par
+\cf4\b0\fs24 The UNIQUE constraint ensures that all values in a column are different.\par
+Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.A PRIMARY KEY constraint automatically has a UNIQUE constraint.\par
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.\par
+\cf7 CREATE TABLE Persons (\par
+    ID int NOT NULL,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255),\par
+    Age int,\par
+    CONSTRAINT UC_Person UNIQUE (ID,LastName)\par
+);\par
+\par
+\cf3\b\fs28 SQL PRIMARY KEY Constraint\par
+\cf4\b0\fs24 The PRIMARY KEY constraint uniquely identifies each record in a table.\par
+Primary keys must contain UNIQUE values, and cannot contain NULL values.\par
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).\par
+\cf7 CREATE TABLE Persons (\par
+    ID int NOT NULL,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255),\par
+    Age int,\par
+    PRIMARY KEY (ID)\par
+);\par
+\cf3\b\fs28 SQL PRIMARY KEY on ALTER TABLE\par
+\cf4\b0\fs24 To create a PRIMARY KEY constraint on the "ID" column when the table is already created, use the following SQL:\par
+\cf7 ALTER TABLE Persons\par
+ADD PRIMARY KEY (ID);\par
+ALTER TABLE Persons\par
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);\par
+\cf3\b\fs28 SQL FOREIGN KEY Constraint\par
+\cf4\b0\fs24 The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.\par
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.\par
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.\par
+Look at the following two tables:\par
+\cf7 CREATE TABLE Orders (\par
+    OrderID int NOT NULL,\par
+    OrderNumber int NOT NULL,\par
+    PersonID int,\par
+    PRIMARY KEY (OrderID),\par
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)\par
+);\par
+\cf3\b\fs28 SQL CHECK Constraint\par
+\cf4\b0\fs24 The CHECK constraint is used to limit the value range that can be placed in a column.\par
+If you define a CHECK constraint on a column it will allow only certain values for this column.\par
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.\par
+\cf7 CREATE TABLE Persons (\par
+    ID int NOT NULL,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255),\par
+    Age int,\par
+    CHECK (Age>=18)\par
+);\par
+\cf3\b\fs28 SQL DEFAULT Constraint\par
+\cf4\b0 The DEFAULT constraint is used to set a default value for a column.\par
+The default value will be added to all new records, if no other value is specified.\par
+\cf7\fs24 CREATE TABLE Persons (\par
+    ID int NOT NULL,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255),\par
+    Age int,\par
+    City varchar(255) DEFAULT 'Sandnes'\par
+);\par
+\cf3\b\fs28 SQL CREATE INDEX Statement\par
+\cf4\b0\fs24 The CREATE INDEX statement is used to create indexes in tables.\par
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.\par
+\cf7 CREATE INDEX index_name ON table_name (column1, column2, ...);\par
+ALTER TABLE table_name DROP INDEX index_name;\par
+\cf3\b\fs28 AUTO INCREMENT Field\par
+\cf4\b0\fs24 Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.\par
+Often this is the primary key field that we would like to be created automatically every time a new record is inserted.\par
+\cf7 CREATE TABLE Persons (\par
+    Personid int NOT NULL AUTO_INCREMENT,\par
+    LastName varchar(255) NOT NULL,\par
+    FirstName varchar(255),\par
+    Age int,\par
+    PRIMARY KEY (Personid)\par
+);\par
+\par
+\cf3\b\fs28 SQL Dates\par
+\cf4\b0\fs24 The most difficult part when working with dates is to be sure that the format of the date you are trying to insert, matches the format of the date column in the database.\par
+SQL Date Data Types\par
+\cf7 MySQL comes with the following data types for storing a date or a date/time value in the database:\cf4\par
+
+\pard\sa200\sl276\slmult1\cf7\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf4 DATE - format YYYY-MM-DD\par
+{\pntext\f1\'B7\tab}DATETIME - format: YYYY-MM-DD HH:MI:SS\par
+{\pntext\f1\'B7\tab}TIMESTAMP - format: YYYY-MM-DD HH:MI:SS\par
+{\pntext\f1\'B7\tab}YEAR - format YYYY or YY\par
+
+\pard\sa200\sl276\slmult1\cf7 SQL Server comes with the following data types for storing a date or a date/time value in the database:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\cf4 DATE - format YYYY-MM-DD\par
+{\pntext\f1\'B7\tab}DATETIME - format: YYYY-MM-DD HH:MI:SS\par
+{\pntext\f1\'B7\tab}SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS\par
+{\pntext\f1\'B7\tab}TIMESTAMP - format: a unique number\cf7\par
+
+\pard\sa200\sl276\slmult1\par
+\cf3\b\fs28 SQL JOIN\par
+\cf4\b0\fs24 A JOIN clause is used to combine rows from two or more tables, based on a related column between them.\par
+\cf7 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders\par
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;\par
+\par
+\cf3\b\fs28 Different Types of SQL JOINs\par
+\cf4\b0\fs24 Here are the different types of the JOINs in SQL:\par
+(INNER) JOIN: Returns records that have matching values in both tables\par
+
+\pard\sa200\sl276\slmult1\cf7 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders\par
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;\par
+
+\pard\sa200\sl276\slmult1\cf4\par
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table\par
+
+\pard\sa200\sl276\slmult1\cf7 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders\par
+left JOIN Customers ON Orders.CustomerID=Customers.CustomerID;\par
+
+\pard\sa200\sl276\slmult1\cf4\par
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table\par
+
+\pard\sa200\sl276\slmult1\cf7 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders\par
+right JOIN Customers ON Orders.CustomerID=Customers.CustomerID;\par
+
+\pard\sa200\sl276\slmult1\cf4\par
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table\par
+
+\pard\sa200\sl276\slmult1\cf7 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders\par
+FULL OUTER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;\par
+\cf3\b\fs28 SQL Self Join\par
+\cf4\b0\fs24 A self join is a regular join, but the table is joined with itself. \par
+\cf7 SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;\par
+\cf3\b\fs28 The SQL UNION Operator\par
+\cf4\b0\fs24 The UNION operator is used to combine the result-set of two or more SELECT statements.\par
+Every SELECT statement within UNION must have the same number of columns\par
+The columns must also have similar data types\par
+The columns in every SELECT statement must also be in the same order\par
+\cf7 SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;\par
+\cf3\b\fs28 UNION ALL Syntax\par
+\cf4\b0\fs24 The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL:\par
+\cf7 SELECT column_name(s) FROM table1 UNION ALL SELECT column_name(s) FROM table2;\par
+
+\pard\sa200\sl276\slmult1\cf4\par
+}
+ 
